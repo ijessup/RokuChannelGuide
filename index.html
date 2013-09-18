@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+		<meta name="viewport" content="width=devicewidth, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		
+		<!-- Phongap -->
+        <script type="text/javascript" src="cordova.js"></script>
+        
+        <!-- jQuery -->
+        <script type="text/javascript" src="jquery/jquery-2.0.3.min.js"></script>
+        <script type="text/javascript" src="jquery/mobile/jquery.mobile-1.3.2.min.js"></script>
+		<link rel="stylesheet" href="jquery/mobile/themes/roku.min.css" />
+		<link rel="stylesheet" href="jquery/mobile/jquery.mobile.structure-1.3.2.min.css" />
+		
+        <!-- App Specific -->
+		<script type="text/javascript" src="scripts/app.js"></script>
+		<script type="text/javascript" src="scripts/app.ui.js"></script>
+		
+		<!-- Initialize Applications -->
+		<script type="text/javascript" src="scripts/init.js"></script>
+		
+        <title>Roku Channel Guide</title>
+    </head>
+    <body>
+    	<div id="home" data-role="page">
+			<div data-role="header">
+				<h1>Roke Channel Guide</h1>
+			</div>
+			<div data-role="content">
+				<img src="images/r3.png" style="width: 100%; max-width:514px; display:block; margin:auto"/>
+				
+				<ul data-role="listview" data-inset="true" >
+					<li><a onclick="app.init.getCategories('Private');">Private Channels</a></li>
+					<li>Public Channels (Coming Soon!)</li>
+				</ul>
+				<ul data-role="listview" data-inset="true" >
+					<li><a href="#howTo" data-rel="popup">How To Use</a></li>
+				</ul>
+				<ul data-role="listview" data-inset="true" >
+					<li><a href="#support" data-transition="flip">Support</a></li>
+				</ul>
+    		</div>
+		
+			<div data-role="popup" id="howTo" data-overlay-theme="a">
+				<div data-role="content">
+					<p>
+						This Application makes it very easy to find and add independent/private channels to your Roku Device. 
+						To add the selection to your Roku Device simply locate the desired channel and click the plus sign "+" 
+						on the right side of the screen. Once you have pressed the button it will bring you into your Roku Account. 
+						You must log into the Roku Account affiliated with the Roku Device you would like to see the channel appear on. 
+						Once logged in simply click "Yes, Add Channel". It should add the channel to your Roku Device within the next 
+						few minutes.
+					</p>
+				</div>
+			</div>
+    	</div>
+    	
+    	<div data-role="page" id="support">
+			<div data-role="header">
+				<a data-icon="back" data-iconpos="notext" onclick="app.ui.showPrevious();">Back</a>
+				<h1>Support</h1>
+			</div>
+			<div data-role="content">
+				<p>This application was developed and writen by Cloud5 Studios, LLC - a subsidiary of Pathway Group, LLC.</p>
+				<p>Should any errors occur, please contact a support agent with as much information regarding how the error came to be.</p>
+				<a data-role="button" href="mailto:support@cloud5studios.com?cc=support@pathwaygrouponline.com&subject=Support Request - Roku Channel Guide&body=Please report the error in as much detail as possible below:">Submit Support Request</a>
+				<p>Questions, comments, critiques, and feature requests are also welcome. Cloud5 Studios strives to be a leader in mobile and rich internet application development. Our success come from our client's success.</p>
+				<a data-role="button" href="mailto:info@cloud5studios.com?cc=infopathwaygrouponline.com&subject=Contact - Roku Channel Guide&body=Let us know how you really feel!">Contact Cloud5</a>
+			</div>
+		</div>
+    </body>
+</html>
