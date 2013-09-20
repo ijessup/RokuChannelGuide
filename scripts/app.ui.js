@@ -140,14 +140,8 @@ app.ui = (function()
 		ui.elements.popups.howTo.element = 
 			'<div data-role="popup" id="' + ui.elements.popups.howTo.id + '" data-overlay-theme="a">' +
 				'<div data-role="content">' +
-					'<p>' +
-						'This Application makes it very easy to find and add independent/private channels to your Roku Device. ' +
-						'To add the selection to your Roku Device simply locate the desired channel and click the plus sign "+" ' +
-						'on the right side of the screen. Once you have pressed the button it will bring you into your Roku Account. ' +
-						'You must log into the Roku Account affiliated with the Roku Device you would like to see the channel appear on. ' +
-						'Once logged in simply click "Yes, Add Channel". It should add the channel to your Roku Device within the next ' +
-						'few minutes.' +
-					'</p>' +
+					'<p>This Application makes it very easy to find and add independent/private channels to your Roku Device. To add the selection to your Roku Device simply locate the desired channel and click the plus sign "+" on the right side of the screen. Once you have pressed the button it will bring you into your Roku Account. You must log into the Roku Account affiliated with the Roku Device you would like to see the channel appear on. Once logged in simply click "Yes, Add Channel". It should add the channel to your Roku Device within the next few minutes.</p>' +
+					'<p>If you would like to instantly have the channel update go to the setting tab on the left side of the Roku Menu. From there click "System Update". This will update any new channels you have selected.</p>' +
 				'</div>' +
 			'</div>';
 		ui.elements.popups.howTo.button = 
