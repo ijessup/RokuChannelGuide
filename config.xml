@@ -2,7 +2,7 @@
 <widget id="com.cloud5studios.roku" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Roku Channel Guide</name>
     <description>
-        Find private and publich Roku channels by searching or browsing.
+        Find private and public Roku channels by searching or browsing.
     </description>
     <author email="support@cloud5studios.com" href="http://cloud5studios.com">
         Cloud5 Studios
