@@ -1,0 +1,85 @@
+<style>
+	div.remoteContainer {
+		width: 200px;
+		margin: auto;
+		text-align: center;
+	}
+	div.buttonGroup {
+		width:100%;
+	}
+	table.remote {
+		width: 100%;
+	}
+	table.remoteTop, 
+	table.remotePlayback,
+	table.remoteGame {
+		text-align:center;
+	}
+	table.remoteDPad td {
+		width: 20%
+	}
+</style>
+<div class="remoteContainer">
+	<div class="buttonGroup" data-role="controlgroup" data-type="horizontal">
+		<a data-role="button" onclick="app.remote.click('Back');">Back</a>
+		<a data-role="button" onclick="app.remote.click('Home');">Home</a>
+	</div>
+	<table class="remote remoteDPad">
+		<tr>
+			<td></td>
+			<td></td>
+			<td data-role="controlgroup">
+				<a data-role="button" data-icon="arrow-u" data-iconpos="notext" onclick="app.remote.click('Up');"></a>
+			</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td data-role="controlgroup">
+				<a data-role="button" data-icon="arrow-l" data-iconpos="notext" onclick="app.remote.click('Left');"></a>
+			</td>
+			<td></td>
+			<td data-role="controlgroup">
+				<a data-role="button" data-icon="arrow-r" data-iconpos="notext" onclick="app.remote.click('Right');"></a>
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td data-role="controlgroup">
+				<a data-role="button" data-icon="arrow-d" data-iconpos="notext" onclick="app.remote.click('Down');"></a>
+			</td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	<div data-role="controlgroup" data-type="horizontal">
+		<a data-role="button" data-icon="back" data-iconpos="notext" onclick="app.remote.click('InstantReplay');"></a>
+		<a data-role="button" onclick="app.remote.click('Select');">OK</a>
+		<a data-role="button" data-icon="star" data-iconpos="notext" onclick="app.remote.click('Info');"></a>
+	</div>
+	<div data-role="controlgroup" data-type="horizontal">
+		<a data-role="button" onclick="app.remote.click('Rew');">&laquo;</a>
+		<a data-role="button" onclick="app.remote.click('Play');">>||</a>
+		<a data-role="button" onclick="app.remote.click('Fwd');">&raquo;</a>
+	</div>
+	<table class="remote remoteGame">
+		<tr>
+			<td><a data-role="button">A</a></td>
+		</tr>
+		<tr>
+			<td><a data-role="button">B</a></td>
+		</tr>
+	</table>
+</div>
+<div data-role="footer" data-position="fixed" data-id="remoteFooter">
+	<div data-role="navbar">
+		<ul>
+			<li><a class="ui-btn-active ui-state-persist">Remote</a></li>
+			<li><a onclick="app.remote.ui.channels({transition:'slide'});">Channels</a></li>
+			<li><a onclick="app.remote.ui.settings({transition:'slide'});">Settings</a></li>
+		</ul>
+	</div>
+</div>

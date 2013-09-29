@@ -18,6 +18,9 @@ app.init = (function()
 	 */
 	init.initializeFramework = function()
 	{	
+		$.mobile.allowCrossDomainPages = true;
+		$.support.cors = true;
+		
 		$(document).bind("backbutton", function(e){
 		    if($.mobile.activePage.is('#home')){
 		        e.preventDefault();
@@ -31,7 +34,9 @@ app.init = (function()
 		//$('#home').append(app.ui.elements.popups.howTo.element);
 	};
 	
-	
+	/**
+	 * Channel Guide Init Functions
+	 */
 	init.getCategories = function( type )
 	{		
 		var pageSelector = app.ui.toCamelCase(type + " Channels");
@@ -43,8 +48,8 @@ app.init = (function()
 					'<li>Loading...</li>' +
 				'</ul>'
 			);
-			app.getCatagories( type, function(type, data) {
-				app.ui.showCategories(type, data);
+			app.guide.getCatagories( type, function(type, data) {
+				app.guide.ui.showCategories(type, data);
 			});
 		};
 		app.ui.showPage(pageSelector, {transition : 'flip'});
@@ -53,8 +58,8 @@ app.init = (function()
 	{
 		var pageSelector = "category-" + catID;
 		if($("#" + pageSelector).length == 0) {
-			app.getChannels( catID, function(data) {
-				app.ui.showChannels(data);
+			app.guide.getChannels( catID, function(data) {
+				app.guide.ui.showChannels(data);
 			});
 		}
 		app.ui.showPage(pageSelector, {transition : 'flip'});
@@ -63,8 +68,8 @@ app.init = (function()
 	{
 		var pageSelector = "channel-" + chanID;
 		if($("#" + pageSelector).length == 0) {
-			app.getChannel( chanID, function(data) {
-				app.ui.showChannel(data);
+			app.guide.getChannel( chanID, function(data) {
+				app.guide.ui.showChannel(data);
 			});
 		}
 		app.ui.showPage(pageSelector, {transition : 'flip'});

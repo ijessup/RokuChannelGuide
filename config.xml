@@ -10,7 +10,7 @@
     <feature name="http://api.phonegap.com/1.0/device" />
     <preference name="permissions" value="none" />
     <preference name="orientation" value="default" />
-    <preference name="target-device" value="universal" />
+    <preference name="target-device" value="handset" />
     <preference name="fullscreen" value="false" />
     <preference name="webviewbounce" value="true" />
     <preference name="prerendered-icon" value="true" />
@@ -53,5 +53,5 @@
 	    <param name="ios-package" value="CDVInAppBrowser" />
 	</feature>
 
-    <access origin="*" browserOnly="true"/>
+    <access origin="*"/>
 </widget>

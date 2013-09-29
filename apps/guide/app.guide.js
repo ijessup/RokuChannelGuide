@@ -10,15 +10,15 @@
 /**
  * Application layer (non-UI code).
  */
-var app = (function()
+app.guide = (function()
 {
-	var app = {};
+	var guide = {};
 	var dataURL = "http://dev.cloud5studios.com/tools/packages/roku_channels/";
 
 	/**
 	 * Downloads categories.
 	 */
-	app.getCatagories = function( type, callbackFun ) {		
+	guide.getCatagories = function( type, callbackFun ) {		
 		// Do AJAX call to get an array of categories.
 		$.getJSON(dataURL + "categories", {'type' : type})
 		.done( function(data) {
@@ -31,7 +31,7 @@ var app = (function()
 	/**
 	 * Downloads channels.
 	 */
-	app.getChannels = function( catID, callbackFun ) {		
+	guide.getChannels = function( catID, callbackFun ) {		
 		// Do AJAX call to get an array of channels.
 		$.getJSON(dataURL + "channels", {'category' : catID})
 		.done( function(data) {
@@ -44,7 +44,7 @@ var app = (function()
 	/**
 	 * Downloads channel.
 	 */
-	app.getChannel = function( chanID, callbackFun ) {		
+	guide.getChannel = function( chanID, callbackFun ) {		
 		// Do AJAX call to get an array of channels.
 		$.getJSON(dataURL + "channels", {'channel' : chanID})
 		.done( function(data) {
@@ -55,5 +55,5 @@ var app = (function()
 		});
 	};
 	
-	return app;
+	return guide;
 })();
