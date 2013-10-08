@@ -25,7 +25,7 @@ app.guide.ui = (function()
 			$.each(json, function(i, data){
 				results += 
 					'<li>' +
-						'<a onclick="app.init.getChannels(' + data.id + ')">' + 
+						'<a onclick="app.init.getChannels(' + data.id + ', \'' + type + '\')">' + 
 							data.name + 
 							'<span class="ui-li-count">' + data.count + '</span>' +
 						'</a>' +

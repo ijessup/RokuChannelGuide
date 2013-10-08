@@ -54,11 +54,11 @@ app.init = (function()
 		};
 		app.ui.showPage(pageSelector, {transition : 'flip'});
 	};
-	init.getChannels = function( catID )
+	init.getChannels = function( catID, type )
 	{
 		var pageSelector = "category-" + catID;
 		if($("#" + pageSelector).length == 0) {
-			app.guide.getChannels( catID, function(data) {
+			app.guide.getChannels( catID, type, function(data) {
 				app.guide.ui.showChannels(data);
 			});
 		}

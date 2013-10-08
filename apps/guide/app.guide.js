@@ -13,7 +13,7 @@
 app.guide = (function()
 {
 	var guide = {};
-	var dataURL = "http://dev.cloud5studios.com/tools/packages/roku_channels/";
+	var dataURL = "http://roku.cloud5studios.com/data/index.php/tools/packages/roku_channels/";
 
 	/**
 	 * Downloads categories.
@@ -31,9 +31,9 @@ app.guide = (function()
 	/**
 	 * Downloads channels.
 	 */
-	guide.getChannels = function( catID, callbackFun ) {		
+	guide.getChannels = function( catID, type, callbackFun ) {		
 		// Do AJAX call to get an array of channels.
-		$.getJSON(dataURL + "channels", {'category' : catID})
+		$.getJSON(dataURL + "channels", {'category' : catID, 'type' : type})
 		.done( function(data) {
 			callbackFun(data);
 		})

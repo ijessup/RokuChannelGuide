@@ -57,11 +57,12 @@
 				<img src="images/r3.png" style="width: 100%; max-width:514px; display:block; margin:auto"/>
 				
 				<ul data-role="listview" data-inset="true" >
+					<li><a onclick="app.init.getCategories('All');">Combined List</a></li>
 					<li><a onclick="app.init.getCategories('Private');">Private Channels</a></li>
-					<li>Public Channels (Coming Soon!)</li>
-					<li><a href="#howTo" data-rel="popup">How To Use</a></li>
+					<li><a onclick="app.init.getCategories('Public');">Public Channels</a></li>
 				</ul>
 				<ul data-role="listview" data-inset="true" >
+					<li><a href="#howTo" data-rel="popup">How To Use</a></li>
 					<li><a href="#support" data-transition="flip">Support</a></li>
 				</ul>
     		</div>
