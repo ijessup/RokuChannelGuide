@@ -56,7 +56,7 @@ app.guide.ui = (function()
 							'<h3>' + data.title + '</h3>' +
 							'<p>' + data.description + '</p>' +
 						'</a>' +
-						'<a onclick="window.open(\'' + data.add + '\', \'_blank\', \'location=no\');">Add Channel</a>' +
+						'<a onclick="window.open(\'https://owner.roku.com/Add/' + data.roku_id + '\', \'_blank\', \'location=no\');">Add Channel</a>' +
 					'</li>';
 			});
 		}
@@ -80,7 +80,7 @@ app.guide.ui = (function()
 			'<div data-role="content">' +
 				'<img src="' + json.image + '" style="width: 100%; max-width:250px; display:block; margin:auto"/>' +
 				'<p>' + json.description + '</p>' +
-				'<a data-role="button" onclick="window.open(\'' + json.add + '\', \'_blank\', \'location=no\');">Add Channel</a>' +
+				'<a data-role="button" onclick="window.open(\'https://owner.roku.com/Add/' + data.roku_id + '\', \'_blank\', \'location=no\');">Add Channel</a>' +
 			'</div>'
 		);
 	}; 
