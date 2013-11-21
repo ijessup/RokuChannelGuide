@@ -25,11 +25,18 @@ app.ui = (function()
 	{
 		$('body')
 			.append(
-				'<div id="' + pageSelector + '" data-role="page">' +
-					'<div data-role="header">' +
-						ui.elements.buttons.back.button +
-						'<h1>' + pageName + '</h1>' +
-						ui.elements.popups.howTo.button +
+				'<div id="' + pageSelector + '" data-role="page" data-theme="a">' +
+					'<div data-role="header" data-position="fixed" class="ui-grid-b my-header-grid">' +
+						'<div data-role="controlgroup" data-type="horizontal" data-mini="true" class="ui-block-a">' +
+							ui.elements.buttons.back.button +
+							ui.elements.buttons.home.button +
+						'</div>' +
+						'<div class="ui-block-b" style="margin-top:10px; padding-bottom:10px; text-align:center;">' +
+							pageName + 
+						'</div>' +
+						'<div data-role="controlgroup" data-type="horizontal" data-mini="true" class="ui-block-c" style="text-align:right">' +
+							ui.elements.popups.howTo.button +
+						'</div>' +
 					'</div>' +
 					
 					'<div data-role="content">' +
@@ -51,13 +58,20 @@ app.ui = (function()
 	{
 		history.back();
 	};
+	ui.goHome = function()
+	{
+		ui.showPage('home');
+	};
 	
 	ui.elements = {};
 	
 	ui.elements.buttons = {};
 	ui.elements.buttons.back = {};
 		ui.elements.buttons.back.button =  
-			'<a data-icon="back" data-iconpos="notext" onclick="app.ui.showPrevious();">Back</a>';
+			'<a data-role="button" data-icon="back" data-iconpos="notext" onclick="app.ui.showPrevious();">Back</a>';
+	ui.elements.buttons.home = {};
+		ui.elements.buttons.home.button =  
+			'<a data-role="button" data-icon="home" data-iconpos="notext" onclick="app.ui.goHome();">Home</a>';
 	
 	ui.elements.popups = {};
 	ui.elements.popups.howTo = {};

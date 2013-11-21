@@ -46,7 +46,22 @@ app.init = (function()
 				pageSelector,
 				'<ul class="categories" data-role="listview" data-filter="true" data-split-icon="plus" data-split-theme="a">' +
 					'<li>Loading...</li>' +
-				'</ul>'
+				'</ul>' +
+				'<div data-role="footer" data-id="footer" data-position="fixed">' +
+					'<div data-role="navbar">' +
+						'<ul>' +
+							'<li><a onclick="app.guide.ui.navChange(this);" ' +
+							((type == 'Private') ? 'class="ui-btn-active ui-state-persist"' : '') +
+							'data-nav="Private">Private</a></li>' +
+							'<li><a onclick="app.guide.ui.navChange(this);" ' +
+							((type == 'Public') ? 'class="ui-btn-active ui-state-persist"' : '') +
+							'data-nav="Public">Public</a></li>' +
+							'<li><a onclick="app.guide.ui.navChange(this);" ' +
+							((type == 'All') ? 'class="ui-btn-active ui-state-persist"' : '') +
+							'data-nav="All">Combined</a></li>' +
+						'</ul>' +
+					'</div>' +
+				'</div>'
 			);
 			app.guide.getCatagories( type, function(type, data) {
 				app.guide.ui.showCategories(type, data);
@@ -56,10 +71,10 @@ app.init = (function()
 	};
 	init.getChannels = function( catID, type )
 	{
-		var pageSelector = "category-" + catID;
+		var pageSelector = "category-" + catID + "-" + type;
 		if($("#" + pageSelector).length == 0) {
-			app.guide.getChannels( catID, type, function(data) {
-				app.guide.ui.showChannels(data);
+			app.guide.getChannels( catID, type, function(type, data) {
+				app.guide.ui.showChannels(type, data);
 			});
 		}
 		app.ui.showPage(pageSelector, {transition : 'flip'});

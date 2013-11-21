@@ -20,9 +20,17 @@ app.guide = (function()
 	 */
 	guide.getCatagories = function( type, callbackFun ) {		
 		// Do AJAX call to get an array of categories.
+		$.mobile.loading( 'show', {
+			text: "Loading...",
+			textVisible: true,
+			theme: "b",
+			textonly: false,
+			html: ""
+		});
 		$.getJSON(dataURL + "categories", {'type' : type})
 		.done( function(data) {
 			callbackFun(type, data);
+			$.mobile.loading( 'hide' );
 		})
 		.error( function( err ) {
 			alert( err.status );
@@ -33,9 +41,17 @@ app.guide = (function()
 	 */
 	guide.getChannels = function( catID, type, callbackFun ) {		
 		// Do AJAX call to get an array of channels.
-		$.getJSON(dataURL + "channels", {'category' : catID, 'type' : type})
+		$.mobile.loading( 'show', {
+			text: "Loading...",
+			textVisible: true,
+			theme: "b",
+			textonly: false,
+			html: ""
+		});
+		$.getJSON(dataURL + "channels", {'category' : catID, 'type' : type, 'sort' : 'title'})
 		.done( function(data) {
-			callbackFun(data);
+			callbackFun(type, data);
+			$.mobile.loading( 'hide' );
 		})
 		.error( function( err ) {
 			alert( err.status );
@@ -46,9 +62,17 @@ app.guide = (function()
 	 */
 	guide.getChannel = function( chanID, callbackFun ) {		
 		// Do AJAX call to get an array of channels.
+		$.mobile.loading( 'show', {
+			text: "Loading...",
+			textVisible: true,
+			theme: "b",
+			textonly: false,
+			html: ""
+		});
 		$.getJSON(dataURL + "channels", {'channel' : chanID})
 		.done( function(data) {
 			callbackFun(data);
+			$.mobile.loading( 'hide' );
 		})
 		.error( function( err ) {
 			alert( err.status );

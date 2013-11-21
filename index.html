@@ -20,7 +20,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-		<meta name="viewport" content="width=devicewidth, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 		
 		<!-- Phongap -->
         <script type="text/javascript" src="cordova.js"></script>
@@ -47,9 +47,12 @@
 		<script type="text/javascript" src="apps/init.js"></script>
 		
         <title>Roku Channel Guide</title>
+        
+        <link rel="stylesheet" type="text/css" href="style.css">
+        
     </head>
     <body>
-    	<div id="home" data-role="page">
+    	<div id="home" data-role="page" data-theme="a">
 			<div data-role="header">
 				<h1>Roku Channel Guide</h1>
 			</div>
@@ -57,9 +60,14 @@
 				<img src="images/r3.png" style="width: 100%; max-width:514px; display:block; margin:auto"/>
 				
 				<ul data-role="listview" data-inset="true" >
-					<li><a onclick="app.init.getCategories('All');">Combined List</a></li>
-					<li><a onclick="app.init.getCategories('Private');">Private Channels</a></li>
+					<li data-theme="b"><a onclick="app.init.getCategories('Private');">Private Channels</a></li>
+				</ul>
+				<ul data-role="listview" data-inset="true" >
 					<li><a onclick="app.init.getCategories('Public');">Public Channels</a></li>
+					<li><a onclick="app.init.getCategories('All');">Combined List</a></li>
+				</ul>
+				<ul data-role="listview" data-inset="true" >
+					<li><a onclick="app.init.getChannels(null,'All');">All Channels</a></li>
 				</ul>
 				<ul data-role="listview" data-inset="true" >
 					<li><a href="#howTo" data-rel="popup">How To Use</a></li>
@@ -75,7 +83,7 @@
 			</div>
     	</div>
     	
-    	<div data-role="page" id="support">
+    	<div data-role="page" id="support" data-theme="a">
 			<div data-role="header">
 				<a data-icon="back" data-iconpos="notext" onclick="app.ui.showPrevious();">Back</a>
 				<h1>Support</h1>
