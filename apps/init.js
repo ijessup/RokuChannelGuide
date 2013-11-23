@@ -67,7 +67,7 @@ app.init = (function()
 				app.guide.ui.showCategories(type, data);
 			});
 		};
-		app.ui.showPage(pageSelector, {transition : 'flip'});
+		app.ui.showPage(pageSelector, {transition : 'none'});
 	};
 	init.getChannels = function( catID, type )
 	{
@@ -77,7 +77,7 @@ app.init = (function()
 				app.guide.ui.showChannels(type, data);
 			});
 		}
-		app.ui.showPage(pageSelector, {transition : 'flip'});
+		app.ui.showPage(pageSelector, {transition : 'none'});
 	};
 	init.getChannel = function ( chanID, chanName )
 	{
@@ -87,7 +87,7 @@ app.init = (function()
 				app.guide.ui.showChannel(data);
 			});
 		}
-		app.ui.showPage(pageSelector, {transition : 'flip'});
+		app.ui.showPage(pageSelector, {transition : 'none'});
 	};
 	
 	return init;

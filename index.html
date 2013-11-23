@@ -67,7 +67,7 @@
 					<li><a onclick="app.init.getCategories('All');">Combined List</a></li>
 				</ul>
 				<ul data-role="listview" data-inset="true" >
-					<li><a onclick="app.init.getChannels(null,'All');">All Channels</a></li>
+					<li><a onclick="app.ui.showPage('search');">Search All Channels</a></li>
 				</ul>
 				<ul data-role="listview" data-inset="true" >
 					<li><a href="#howTo" data-rel="popup">How To Use</a></li>
@@ -82,6 +82,20 @@
 				</div>
 			</div>
     	</div>
+    	
+    	<div data-role="page" id="search" data-theme="a">
+			<div data-role="header">
+				<a data-icon="back" data-iconpos="notext" onclick="app.ui.showPrevious();">Back</a>
+				<h1>Search</h1>
+			</div>
+			<div data-role="content">
+				<input type="search" name="query" id="query" value="" />
+                <button data-theme="b" class="ui-btn-hidden" aria-disabled="false" onclick="app.guide.search($('input[name=query]').val());">Search</button>
+                <hr></hr>
+                <br />
+                <ul id="search-results" data-role="listview" data-split-icon="plus"></ul>
+			</div>
+		</div>
     	
     	<div data-role="page" id="support" data-theme="a">
 			<div data-role="header">

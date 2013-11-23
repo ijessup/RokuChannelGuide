@@ -109,6 +109,31 @@ app.guide.ui = (function()
 			'</div>'
 		);
 	}; 
+	ui.search = function(json)
+	{
+		var results = "";
+	
+		if ((!json) ||
+			(json.length === 0) ||
+			(json.error === "Not found"))
+		{
+			results = "<li>No content found.</li>";
+		} else {
+			$.each(json.channels, function(i, data){
+				results += 
+					'<li>' +
+						'<a onclick="app.init.getChannel(' + data.id + ', \'' + data.title + '\');">' +
+							'<img src="' + data.image + '" />' +
+							'<h3>' + data.title + '</h3>' +
+							'<p>' + data.description + '</p>' +
+						'</a>' +
+						'<a onclick="window.open(\'https://owner.roku.com/Add/' + data.roku_id + '\', \'_blank\', \'location=no\');">Add Channel</a>' +
+					'</li>';
+			});
+		}
+		$("#search-results").html(results);
+		$("#search-results").listview("refresh");
+	};
 	
 	return ui;
 })();

@@ -46,7 +46,7 @@ app.ui = (function()
 				'</div>'
 			);
 		if(typeof options === 'undefined'){
-		   options = {transition : 'flip'};
+		   options = {transition : 'none'};
 		};
 		app.ui.showPage(pageSelector, options);
 	};
@@ -86,18 +86,23 @@ app.ui = (function()
 		ui.elements.popups.howTo.button = 
 			'<a href="#' + ui.elements.popups.howTo.id + '" data-icon="info" data-iconpos="notext" data-rel="popup" data-role="button" data-inline="true">How To</a>';
 
-	ui.elements.popups.search = {};
-		ui.elements.popups.search.id = "search"; 
-		ui.elements.popups.search.element = 
-			'<div data-role="popup" id="' + ui.elements.popups.search.id + '" data-overlay-theme="a">' +
-				'<form action="#search">' +
-			          '<input type="text" name="query" value="" placeholder="Search"/>' +
-			    	  '<button type="submit" data-theme="b">Search</button>' +
-					'</div>' +
-				'</form>' +
-			'</div>';
-		ui.elements.popups.search.button = 
-			'<a href="#' + ui.elements.popups.search.id + '" data-icon="search" data-iconpos="notext" data-rel="popup" data-role="button" data-inline="true">Search</a>';
+	ui.loader = {};
+		ui.loader.show = function()
+		{
+			// Do AJAX call to get an array of channels.
+			$.mobile.loading( 'show', {
+				text: "Loading...",
+				textVisible: true,
+				theme: "b",
+				textonly: false,
+				html: ""
+			});
+		};
+		ui.loader.hide = function()
+		{
+			$.mobile.loading( 'hide' );
+		};
 		
+	
 	return ui;
 })();
