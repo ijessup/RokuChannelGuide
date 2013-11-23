@@ -61,7 +61,7 @@ app.guide.ui = (function()
 		app.ui.createPage( 
 			json.category.name, 
 			"category-" + json.category.id + "-" + type,
-			'<ul class="channels" data-role="listview" data-filter="true" data-split-icon="plus" data-autodividers="true" data-split-theme="a">' +
+			'<ul class="channels" data-role="listview" data-filter="true" data-theme="a" data-split-icon="plus" data-autodividers="true" data-split-theme="a">' +
 				results +
 			'</ul>' +
 			((json.category.id) ? 

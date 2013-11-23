@@ -39,7 +39,7 @@ app.ui = (function()
 						'</div>' +
 					'</div>' +
 					
-					'<div data-role="content">' +
+					'<div data-role="content" data-theme="a">' +
 						innerContent +
 					'</div>' +
 					ui.elements.popups.howTo.element +
